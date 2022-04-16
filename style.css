@@ -1,0 +1,533 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x:hidden;
+} 
+
+/* ----------------------------------------------------------- NAVBAR ------------------------------------------ */
+nav{
+    width: 100%;
+    height: 40px;
+    font-family:"Agency FB";
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    position:fixed;
+    z-index: 99;
+}
+
+nav .logo{
+    cursor: pointer;
+}
+
+nav .logo img{
+    width: 150px;
+    height: 35px;
+}
+
+nav .logo-siluet img{
+    width: 30px;
+    height: 38px;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    /* margin: 0 50px;
+    padding: 0; */
+    width: 150%;
+    justify-content: space-between;
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+nav li a:hover{
+    border-bottom: 2px solid rgb(255, 70, 70);
+}
+
+
+
+/* -------------------------------------------------------- SLIDESHOW -------------------------------------- */
+.slideshow{
+    height: 667px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slideshow .slide{
+    position: absolute;
+    left: 0;
+    top: 40;
+    height: 667px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    padding: 0 15px;
+    display: none;
+    animation: slide 2s ease;
+}
+
+.slideshow .slide.active{
+    display: flex;
+}
+
+@keyframes slide{
+    0%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+
+.slideshow .container{
+    flex-grow: 1;
+}
+
+.slideshow .caption{
+    width: 50%;
+}
+
+.slideshow .caption h1{
+    font-size: 50px;
+    color: #ffffff;
+    margin: 0;
+    font-family: Agency FB;
+}
+
+.slideshow .slide.active .caption h1{
+    opacity: 0;
+    animation: captionText .5s ease forwards;
+    animation-delay: 1s;
+}
+
+.slideshow .caption p{
+    font-size: 30px;
+    color: #ffffff;
+    font-family: Agency FB;
+}
+.slideshow .slide.active .caption p{
+    opacity: 0;
+    animation: captionText .5s ease forwards;
+    animation-delay: 1.2s;
+}
+
+.slideshow .caption a{
+    margin: 5px;
+    display: inline-block;
+    padding: 5px 30px;
+    background-color: #ffffff;
+    color: rgb(156, 0, 0);
+    font-family: Agency FB;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.slideshow .caption a:hover{
+    background-color:rgb(255, 70, 70);
+    color: #fff;
+}
+
+.slideshow .slide.active .caption a{
+    opacity: 0;
+    animation: captionText .5s ease forwards;
+    animation-delay: 1.4s;
+}
+
+@keyframes captionText{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.slideshow .controls .prev,
+.slideshow .controls .next{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: -20px;
+    color: #ffffff;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bolder;
+    cursor: pointer;
+    font-family: Agency FB;
+    transition: all .5s ease;
+}
+
+.slideshow .controls .prev{
+    left: 0;
+}
+
+.slideshow .controls .next{
+    right: 0;
+}
+
+.slideshow .indicators{
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+.slideshow .indicators div{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    color: #ffffff;
+    background-color: #ffffff;
+    margin: 5px;
+    border-radius: 50%;
+    text-align: center;
+    opacity: .5;
+    line-height: 12px;
+    cursor: pointer;
+}
+
+.slideshow .indicators div.active{
+    opacity: 1;
+}
+
+/* responsive */
+@media(max-width: 767px){
+    .controls{
+        display: none;
+    }
+}
+
+/* ------------------------------------------------ BRAND ------------------------------------------- */
+.brand{
+    width: 100%;
+    height: 120px;
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.brand h1{
+    font-family: Agency FB;
+    font-size: 30px;
+    position: relative;
+}
+
+.brand .brands-logo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.brand img{
+    width: 80px;
+    height: 70px;
+    margin: 15px 20px;
+}
+
+/* ------------------------------------------------ PRODUCT ------------------------------------------ */
+.product-container{
+    width: 100%;
+    height: 1850px;
+    background: url(img/s4.jpg);
+}
+.product{
+    width: 100%;
+    height: 1850px;
+    position: relative;
+    text-align: center;
+    margin: 50px 0;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    overflow-x: hidden;
+}
+
+.product h1{
+    font-family: Agency FB;
+    font-size: 30px;
+    color: #fff;
+    padding: 10px;
+}
+
+.nike .nike-logo{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    right: -120px;
+    margin-top: -80px;
+}
+.jordan .jordan-logo{
+    width: 500px;
+    height: 430px;
+    position: absolute;
+    right: -60px;
+    margin-top: -130px;
+}
+
+.puma .puma-logo{
+    width: 500px;
+    height: 370px;
+    position: absolute;
+    right: -100px;
+    margin-top: -100px;
+}
+
+
+.product .nike, .jordan, .puma{
+    width: 90%;
+    height: 300px;
+    position: relative;
+    background-color: rgb(255, 70, 70);
+    border: 5px solid white;
+    transform: skew(-5deg, -5deg);
+    margin-top: 40px;
+    margin-left: -20px;
+    box-shadow: 0 5px 8px rgba(255, 255, 255, 0.2);
+}
+
+.product .nike .nike-product, .jordan .jordan-product, .puma .puma-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30%;
+}
+.product .nike .nike-product .n, .jordan .jordan-product .n, .puma .puma-product .n{ 
+    height: 210px;
+    width: 130px;
+    position: relative;
+    margin: 10px 10px;
+    box-shadow: 8px 5px 6px rgba(0, 0, 0, 0.4);
+    padding: 3px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.nike-product .n:hover,
+.jordan-product .n:hover,
+.puma-product .n:hover,
+.adidas-product .n:hover,
+.under-product .n:hover{
+    transform: scale(1.08);
+    transition: .4s;
+    cursor:pointer;
+}
+
+.product .nike .nike-product .n img, .jordan .jordan-product .n img, .puma .puma-product .n img{
+    width: 120px;
+    height: 120px;
+}
+
+.product .nike .nike-product .n a, .jordan .jordan-product .n a, .puma .puma-product .n a{
+    margin: 8px;
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: rgb(156, 0, 0);
+    color: #ffffff;
+    font-family: Agency FB;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight:bolder;
+    letter-spacing: 0.4px;
+    border: 1px solid rgb(156, 0, 0);
+    border-radius: 30px;
+}
+.product .adidas, .product .under{
+    width: 90%;
+    height: 300px;
+    position: relative;
+    background-color: rgb(255, 70, 70);;
+    border: 5px solid white;
+    transform: skew(-5deg, -5deg);
+    margin-top: 20px;
+    margin-left: 12%;
+    box-shadow: 0 5px 8px rgba(255, 255, 255, 0.2);
+}
+.product .adidas .adidas-product, .product .under .under-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 28%;
+}
+
+.adidas .adidas-logo{
+    width: 500px;
+    height: 320px;
+    position: absolute;
+    left: -120px;
+    margin-top: -95px;
+}
+
+.under .under-logo{
+    width: 500px;
+    height: 430px;
+    position: absolute;
+    left: -120px;
+    margin-top: -140px;
+}
+
+.product .adidas .adidas-product .n, .product .under .under-product .n{
+    height: 210px;
+    width: 130px;
+    position: relative;
+    margin: 10px 10px;
+    box-shadow: 8px 5px 6px rgba(0, 0, 0, 0.4);
+    padding: 3px;
+    background-color: white; 
+    border-radius: 15px;  
+}
+
+.adidas .adidas-product .n img, .under .under-product .n img{
+    width: 120px;
+    height: 120px;
+}
+
+.adidas .adidas-product .n a, .under .under-product .n a{
+    margin: 8px;
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: rgb(156, 0, 0);
+    color: #ffffff;
+    font-family: Agency FB;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bolder;
+    letter-spacing: 0.4px;
+    border: 1px solid rgb(156, 0, 0);
+    border-radius: 30px;
+}
+
+
+.n h4{
+    font-family: Impact;
+    font-weight: 300;
+    color: rgb(31, 30, 30);
+}
+
+.n p{
+    font-family: Agency FB;
+    font-weight: bold;
+}
+
+.product .n a:hover, .n a:active{
+    background-color:  rgb(141, 3, 3);
+}
+
+
+/* ------------------------------------------- GALLERY --------------------------------- */
+.gallery{
+    width: 90%;
+    height: 650px;
+    margin: 30px auto;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.gallery h1{
+    font-family: Agency FB;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.thumbnails{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.thumb{
+    width: 33%;
+    height: 300px;
+    border: 3px solid white;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.thumb img{
+    width: 100%;
+    height: 300px;
+}
+
+.thumbnails .thumb img:hover{
+    transform: scale(1.2);
+    transition: 1s;
+}
+
+
+
+  /*  ------------------------------------ FOOTER ----------------------------------*/ 
+.footer{
+    width: 100%;
+    height: 210px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    background-color: rgb(255, 70, 70);
+    color: white;
+}
+
+.footer p{
+    font-family: 'Segoe UI';
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+.about{
+    height: 100%;
+    width: 30%;
+    text-align: left;
+    padding: 20px;
+    margin-right: 5px;
+}
+.about h1{
+    font-family: Agency FB;
+    font-size: 30px;
+}
+
+.contact{
+    height: 100%;
+    width: 25%;
+    text-align: left;
+    padding: 20px;
+    margin-right: 5px;
+}
+.contact h1{
+    font-family: Agency FB;
+    font-size: 30px;
+}
+
+.social-media{
+    height: 100%;
+    width: 40%;
+    display: flex;
+}
+
+
+
+
+
+
