@@ -1,6 +1,6 @@
 # footwork
 <h1>FootWork Online Shop</h1>
-Landing Page for basketball shoes shop. <br>
+This is a shoes store landing page design for selling basketball shoes online. This website is designed to provide beauty as well as convenience and a better experience for customers. <br>
 This website built with Javascript. Just for desktop view (not support for responsive). <br>
 For Preview : https://fransalfiando24.github.io/footwork/ <br>
 
